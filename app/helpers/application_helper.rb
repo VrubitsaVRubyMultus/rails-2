@@ -4,7 +4,7 @@ module ApplicationHelper
     size = options.delete(:size)
     size_class = size ? "fa-#{size}x" : ''
     link_to path, options do
-      content_tag(:span, title, class: "fa fa-#{icon} fa-#{options[:icon]} #{size_class}")
+      content_tag(:span, title, class: "fa fa-#{icon}  #{size_class}")
     end
   end
 end
