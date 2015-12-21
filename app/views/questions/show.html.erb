@@ -14,6 +14,7 @@
 <%= link_to 'Back', questions_path %>
 <br><br>
 <h3><strong>Ответы:</strong></h3>
+<%= link_to "ответить" new_answer_path %>
 <td>
   <strong>
       <% @question.answers.each do |answer| %>

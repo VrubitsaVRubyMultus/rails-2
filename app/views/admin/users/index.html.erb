@@ -1,0 +1,10 @@
+<% @users.each do |user|%>
+	<p>
+	  <%= user.email %>
+	  <%= form_for [:admin, user] do |f| %>
+	    <%= f.label :admin %>
+	    <%= f.check_box :admin %>
+	    <%= submit_tag 'Save' %>
+	  <% end %>
+	<p>
+<% end %>
