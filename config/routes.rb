@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  resources :questions
-  resources :answers
   devise_for :users
   resources :questions do
-    resources :comments, shallow: true
+    resources :answers, shallow: true
   end
 
   namespace :admin do

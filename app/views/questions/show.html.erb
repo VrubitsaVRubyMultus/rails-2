@@ -14,11 +14,18 @@
 <%= link_to 'Back', questions_path %>
 <br><br>
 <h3><strong>Ответы:</strong></h3>
-<%= link_to "ответить" new_answer_path %>
+<%= link_to "ответить", new_question_answer_path(@question) %>
 <td>
+<br><br>
   <strong>
-      <% @question.answers.each do |answer| %>
-        <%= link_to answer.head, answer, class: "btn btn-link" %>
-      <% end %>   
+      <div class="well sidebar-nav">
+        <% @question.answers.each do |answer| %>
+          <p><%= answer.head %></p>
+          <p><%= answer.body %></p>
+          <p><%= answer.sources %></p>        
+          <td><%= link_to 'Edit', edit_answer_path(answer) %></td>
+          <td><%= link_to 'Destroy', answer, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </div>  
   </strong>
 </td>
