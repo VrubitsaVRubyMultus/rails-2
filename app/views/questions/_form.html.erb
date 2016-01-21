@@ -19,6 +19,12 @@
     <%= f.label :body %><br>
     <%= f.text_area :body %>
   </div>
+  <div>
+    <%= f.fields_for :attachments do |a| %>
+    <%= a.label :file %><br>
+    <%= a.file_field :file %> 
+    <% end %> 
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

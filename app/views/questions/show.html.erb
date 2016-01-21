@@ -10,6 +10,15 @@
   <%= @question.body %>
 </p>
 
+<p>
+  <strong>attachments:</strong>
+  <ul>
+  <% @question.attachments.each do |a| %>
+    <li><%= link_to a.file.file.filename, a.file.url %></li>
+  <% end %>
+  </ul>
+</p>
+
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>
 <br><br>
@@ -18,14 +27,12 @@
 <td>
 <br><br>
   <strong>
-      <div class="well sidebar-nav">
         <% @question.answers.each do |answer| %>
           <p><%= answer.head %></p>
           <p><%= answer.body %></p>
           <p><%= answer.sources %></p>        
           <td><%= link_to 'Edit', edit_answer_path(answer) %></td>
           <td><%= link_to 'Destroy', answer, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% end %>
-      </div>  
+        <% end %>  
   </strong>
 </td>
