@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get "admin/welcome/index"
   get "welcome/index"
    resources :profiles
-  resources :users
+  # resources :users
   # resources :categories
   
   root "welcome#index"
