@@ -1,6 +1,7 @@
 class AnswersController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
 	before_action :set_question, only: [:new, :create]
-
+  authorize_resource
   def new
     @answer = Answer.new
   end
@@ -19,6 +20,7 @@ class AnswersController < ApplicationController
   end
   def create
     @answer = @question.answers.new(answer_params)
+    @answer.user = current_user
 
     respond_to do |format|
       if @answer.save
