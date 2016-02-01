@@ -5,11 +5,13 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :categories
+    # resources :categories
     resources :users
+    get "welcome/index" 
+    get "console" => "console#index"
   end
-  get "admin/welcome/index"
-  get "welcome/index"
+  
+    get "welcome/index"
    resources :profiles
   # resources :users
   # resources :categories

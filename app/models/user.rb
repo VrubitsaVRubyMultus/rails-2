@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          omniauth_providers: [:facebook]
   has_many :questions
   has_many :authorizations, dependent: :destroy
-  has_many :answer
+  has_many :answers
 
   def author_of?(object)
     id == object.user_id
