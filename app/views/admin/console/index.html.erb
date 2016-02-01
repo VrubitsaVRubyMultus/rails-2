@@ -1,12 +1,13 @@
 
 <% @questions.each do |question| %>
-<%= link_to question.head, question_path %>
+<%= link_to question.head, question %>
+<td><%= link_to 'Show', question %></td>
+<td><%= link_to 'Edit', edit_question_path(question) %></td>
+<td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
-<td><%= link_to 'Show', user %></td>
-<td><%= link_to 'Edit', edit_user_path(user) %></td>
-<td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
 
 
-<% @user.each do |user| %>
+
+<% @users.each do |user| %>
 <%= link_to user.email, admin.users_path %>
 <% end %>

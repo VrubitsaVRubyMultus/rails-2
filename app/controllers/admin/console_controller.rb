@@ -1,5 +1,5 @@
 class Admin::ConsoleController < Admin::BaseController
-  def show
+  def index
     @users = User.all
     @questions = Question.all
   end
