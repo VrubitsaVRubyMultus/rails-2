@@ -1,13 +1,22 @@
 
 <% @questions.each do |question| %>
+<strong>
 <%= link_to question.head, question %>
+</strong>
 <td><%= link_to 'Show', question %></td>
 <td><%= link_to 'Edit', edit_question_path(question) %></td>
 <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %>
+<br>
 <% end %>
+<br><br><br>
+<%= link_to 'создать(в разработке)', new_user_registration_path %>
+<br>
 
 
 
 <% @users.each do |user| %>
-<%= link_to user.email, admin.users_path %>
+<strong>
+<%= link_to user.email, admin_users_path %>
+</strong>
+<br>
 <% end %>

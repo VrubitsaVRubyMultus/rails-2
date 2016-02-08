@@ -4,6 +4,7 @@
 	  <%= form_for [:admin, user] do |f| %>
 	    <%= f.label :admin %>
 	    <%= f.check_box :admin %>
+	    <%= link_to 'убить', [:admin, user], method: :delete, data: { confirm: 'этот грех будет на твоей совести' }  %>
 	    <%= submit_tag 'Save' %>
 	  <% end %>
 	<p>

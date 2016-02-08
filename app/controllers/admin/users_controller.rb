@@ -14,6 +14,13 @@ class Admin::UsersController < Admin::BaseController
 
     redirect_to admin_users_path
   end
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    respond_to do |format|
+      format.html { redirect_to admin_users_url, notice: 'убиииииииииийцааааааааааа!!!!!!!!!!!!!!!!!!!1111!!11!!11!111111!!1111!!!11!!!11!!!!!!!!1111!!!!!!!!!1!!!!!адин' }
+    end
+  end
 
   protected
 

@@ -12,7 +12,5 @@ class Admin::ConsoleController < Admin::BaseController
     redirect_to admin_console_path
   end
 
-  protected
-
 
 end
