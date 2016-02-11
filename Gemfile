@@ -31,6 +31,9 @@ gem "carrierwave"
 gem "omniauth"
 gem 'omniauth-facebook'
 gem "cancancan"
+gem "sphinx"
+gem 'thinking-sphinx'
+gem 'mysql2'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

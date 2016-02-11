@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  get 'search' => 'search#search'
+
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks'}
   resources :questions do
     resources :answers, shallow: true

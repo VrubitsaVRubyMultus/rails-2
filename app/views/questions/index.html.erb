@@ -1,4 +1,8 @@
 <p id="notice"><%= notice %></p>
+<%= form_tag search_path, method: :get do %>
+   <%= label_tag :q, 'Search' %>
+   <%= text_field_tag :q %>
+   <%= submit_tag 'Search' %>
 
 <h1>Listing Questions</h1>
 
@@ -26,3 +30,5 @@
 <br>
 
 <%= link_to 'New Question', new_question_path %>
+
+
