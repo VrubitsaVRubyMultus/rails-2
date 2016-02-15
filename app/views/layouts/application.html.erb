@@ -42,8 +42,18 @@
     <% if current_user && current_user.admin? %>
       <%= link_with_icon "key", admin_welcome_index_path, title: 'Админка' %>
     <% end %>
+    <%= form_tag search_path, method: :get do %>
+   <%= label_tag :q, 'Search' %>
+   <%= text_field_tag :q %>
+   <%= submit_tag 'Search' %>
+<% end %>
   <% else %>
     <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
+    <%= form_tag search_path, method: :get do %>
+   <%= label_tag :q, 'Search' %>
+   <%= text_field_tag :q %>
+   <%= submit_tag 'Search' %>
+<% end %>
   <% end %>
   <br>
   <h2><%= link_with_icon "question",  welcome_index_path, title: '', size: 2  %></h2>

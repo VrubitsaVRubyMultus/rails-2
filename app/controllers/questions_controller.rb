@@ -65,7 +65,7 @@ class QuestionsController < ApplicationController
     end
   end
 
-  private
+  protected
     # Use callbacks to share common setup or constraints between actions.
     def set_question
       @question = Question.find(params[:id])
