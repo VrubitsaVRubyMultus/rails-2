@@ -12,11 +12,12 @@ Rails.application.routes.draw do
     resources :users
     get "welcome/index" 
     get "console" => "console#index"
+    get "user/show"
   end
   
     get "welcome/index"
    resources :profiles
-  # resources :users
+   #resources :users
   # resources :categories
   
   root "welcome#index"

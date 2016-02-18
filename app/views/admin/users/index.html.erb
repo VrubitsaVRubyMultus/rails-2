@@ -1,6 +1,6 @@
 <% @users.each do |user|%>
 	<p>
-	  <%= user.email %>
+	  <%= link_to user.email, [:admin, user] %>
 	  <%= form_for [:admin, user] do |f| %>
 	    <%= f.label :admin %>
 	    <%= f.check_box :admin %>

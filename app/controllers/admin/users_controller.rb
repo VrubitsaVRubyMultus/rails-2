@@ -21,6 +21,9 @@ class Admin::UsersController < Admin::BaseController
       format.html { redirect_to admin_users_url, notice: 'убиииииииииийцааааааааааа!!!!!!!!!!!!!!!!!!!1111!!11!!11!111111!!1111!!!11!!!11!!!!!!!!1111!!!!!!!!!1!!!!!адин' }
     end
   end
+  def show
+    @user = User.find(params[:id])
+  end
 
   protected
 
